@@ -123,7 +123,7 @@ void draw() {
               
                 j=(curFlame++)%7;                              
                 image(flames[j],cEnemyX[i],cEnemyY[i]);               
-                m-=39;
+              //  m-=39;
             
             if(m<=0){
             gameState=GAME_OVER;
@@ -148,7 +148,7 @@ void draw() {
              
              j=(curFlame++)%6;            
              image(flames[j],bEnemyX[i],bEnemyY[i]); 
-             m-=39;
+            // m-=39;
             
             if(m<=0){
             gameState=GAME_OVER;
@@ -177,7 +177,7 @@ void draw() {
           if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY1[i]>=fighterY-40 && aEnemyY1[i]<=fighterY+40 ){
              j=(curFlame++)%6;                         
              image(flames[j],aEnemyX[i],aEnemyY1[i]); 
-             m-=39;
+            // m-=39;
             
             if(m<=0){
             gameState=GAME_OVER;
