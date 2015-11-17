@@ -147,7 +147,7 @@ void draw() {
             if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
              
              j=(curFlame++)%6;            
-             image(flames[j],cEnemyX[i],cEnemyY[i]); 
+             image(flames[j],bEnemyX[i],bEnemyY[i]); 
              m-=39;
             
             if(m<=0){
@@ -176,7 +176,7 @@ void draw() {
           
           if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY1[i]>=fighterY-40 && aEnemyY1[i]<=fighterY+40 ){
              j=(curFlame++)%6;                         
-             image(flames[j],cEnemyX[i],cEnemyY[i]); 
+             image(flames[j],aEnemyX[i],aEnemyY1[i]); 
              m-=39;
             
             if(m<=0){
