@@ -264,16 +264,16 @@ void draw() {
             // m-=39;  
           if(m<=0){
             gameState=GAME_OVER;
+            }
           if(aEnemyX[0]>1500){
           enemystate=c;
           cEnemyX[0] = -100; cEnemyX[1] = -165; cEnemyX[2] = -230; cEnemyX[3] = -295; cEnemyX[4] = -360; 
           enemyY=floor(random(5,415)); 
          }
-         break;
            }
                     
-         
-        }
+      break;
+        
         
       }     
       
