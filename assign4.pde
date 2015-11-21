@@ -115,7 +115,7 @@ void draw() {
             
             image(enemy,cEnemyX[i],enemyY);                       
             cEnemyX[i]+=3;                               
-            cFlameX[i]+=3;
+           
            if(i==0){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
              cEnemyX[i]=800;m-=39;
