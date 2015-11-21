@@ -14,13 +14,12 @@ int j;
 boolean[]imgEnemy;
 int[]aEnemyX = {-360, -295, -295, -230, -230, -165, -165, -100};
 int[]bEnemyX = {-100, -165, -230, -295, -360};
-int[]cEnemyX = {-100, -165, -230, -295, -360}; 
+int[]cEnemyX = {-100, -170, -235, -300, -365}; 
 int e3Y=floor(random(0,175));
-int[]aEnemyY = {e3Y+120, e3Y+60, e3Y+180, e3Y, e3Y+240, e3Y+60, e3Y+180, e3Y+120};;
-int e2Y=floor(random(0,175));
-int[]bEnemyY = {e2Y, e2Y+60, e2Y+120, e2Y+180, e2Y+240};;
+int[]aEnemyY = {e3Y+120, e3Y+60, e3Y+180, e3Y, e3Y+240, e3Y+60, e3Y+180, e3Y+120};
+int e2Y=floor(random(0,160));
+int[]bEnemyY = {e2Y, e2Y+60, e2Y+120, e2Y+180, e2Y+240};
 
-int[]cEnemyY =new int[5];
 
 
 PImage bg1,bg2,hp,fighter,treasure,enemy;
@@ -37,8 +36,6 @@ boolean leftPressed = false;
 boolean rightPressed = false;
 
 int speed=5;
-
-
 
 
 void setup () {
@@ -58,8 +55,10 @@ void setup () {
   treasureX=floor(random(600)); //treasure
   treasureY=floor(random(440));
   
-  enemyX=-40;
-  enemyY=floor(random(30,440)); //enemy  
+  //enemyX=-40;
+  enemyY=floor(random(30,415)); //enemy  
+  
+  cFlameY=enemyY;
   
   m=39; //hp
   
@@ -115,27 +114,27 @@ void draw() {
           for(int i=0;i<cEnemyX.length;i++){
             
             image(enemy,cEnemyX[i],enemyY);                       
-            cEnemyX[i]+=2;                               
-        
+            cEnemyX[i]+=3;                               
+            cFlameX[i]+=3;
            if(i==0){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
-           cEnemyX[i]=1000; m-=39;
+             cEnemyX[i]=800;m-=39;
             }}
            if(i==1){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
-           cEnemyX[i]=1000; m-=39;
+           cEnemyX[i]=800; m-=39;
            }}
            if(i==2){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
-           cEnemyX[i]=1000; m-=39;
+           cEnemyX[i]=800; m-=39;
            }}
            if(i==3){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
-           cEnemyX[i]=1000; m-=39;
+           cEnemyX[i]=800; m-=39;
            }}
            if(i==4){
              if(cEnemyX[i]>=fighterX-30 && cEnemyX[i]<=fighterX+30 && enemyY>=fighterY-40 && enemyY<=fighterY+40){
-           cEnemyX[i]=1000; m-=39;
+           cEnemyX[i]=800; m-=39;
            }}
            
                 //cEnemyX[i]=1000;
@@ -155,7 +154,7 @@ void draw() {
               enemystate=b;
               bEnemyX[0]=-100; bEnemyX[1]=-165; bEnemyX[2]=-230; bEnemyX[3]=-295; bEnemyX[4]=-360;
               bEnemyY[0]=e2Y; bEnemyY[1]=e2Y+60; bEnemyY[2]=e2Y+120;  bEnemyY[3]=e2Y+180;  bEnemyY[4]=e2Y+240; 
-              e2Y=floor(random(5,250));
+              e2Y=floor(random(5,230));
             }
           
           
@@ -166,32 +165,32 @@ void draw() {
           for(int i=0;i<bEnemyX.length;i++){
             
             image(enemy,bEnemyX[i],bEnemyY[i]);
-            bEnemyX[i]+=2;
+            bEnemyX[i]+=3;
             
             if(i==0){
               if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
-             bEnemyX[i]=1000; m-=39;
+             bEnemyX[i]=800; m-=39;
             }} 
             if(i==1){
               if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
-             bEnemyX[i]=1000; m-=39;
+             bEnemyX[i]=800; m-=39;
             }}
             if(i==2){
               if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
-             bEnemyX[i]=1000; m-=39;
+             bEnemyX[i]=800; m-=39;
             }}
             if(i==3){
               if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
-             bEnemyX[i]=1000; m-=39;
+             bEnemyX[i]=800; m-=39;
             }}
             if(i==4){
               if(bEnemyX[i]>=fighterX-30 && bEnemyX[i]<=fighterX+30 && bEnemyY[i]>=fighterY-40 && bEnemyY[i]<=fighterY+40 ){
-             bEnemyX[i]=1000; m-=39;
+             bEnemyX[i]=800; m-=39;
             }} 
             // j=(curFlame++)%5;            
              //image(flames[j],bEnemyX[i],bEnemyY[i]); 
             // m-=39;
-            if(bEnemyX[0]>1500){
+            if(bEnemyX[0]>1600){
               enemystate=a;
               aEnemyX[0]=-360; 
               aEnemyX[1]=-295; aEnemyX[2]=-295; 
@@ -223,40 +222,40 @@ void draw() {
 
         for(int i=0;i<8;i++){
          
-         aEnemyX[i]+=2;
+         aEnemyX[i]+=3;
         
           
           if(i==0){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==1){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==2){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==3){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==4){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==5){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==6){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           if(i==7){
             if(aEnemyX[i]>=fighterX-30 && aEnemyX[i]<=fighterX+30 && aEnemyY[i]>=fighterY-40 && aEnemyY[i]<=fighterY+40 ){           
-             aEnemyX[i]=1000; m-=39;
+             aEnemyX[i]=800; m-=39;
             }}
           
             // j=(curFlame++)%5;                         
@@ -264,15 +263,16 @@ void draw() {
             // m-=39;  
           if(m<=0){
             gameState=GAME_OVER;
-            }
-          if(aEnemyX[0]>1500){
+          }
+          if(aEnemyX[0]>1600){
           enemystate=c;
           cEnemyX[0] = -100; cEnemyX[1] = -165; cEnemyX[2] = -230; cEnemyX[3] = -295; cEnemyX[4] = -360; 
           enemyY=floor(random(5,415)); 
          }
+         
            }
                     
-      break;
+         break;
         
         
       }     
