@@ -58,7 +58,6 @@ void setup () {
   //enemyX=-40;
   enemyY=floor(random(30,415)); //enemy  
   
-  cFlameY=enemyY;
   
   m=39; //hp
   
