@@ -153,7 +153,7 @@ void draw() {
               enemystate=b;
               bEnemyX[0]=-100; bEnemyX[1]=-165; bEnemyX[2]=-230; bEnemyX[3]=-295; bEnemyX[4]=-360;
               bEnemyY[0]=e2Y; bEnemyY[1]=e2Y+60; bEnemyY[2]=e2Y+120;  bEnemyY[3]=e2Y+180;  bEnemyY[4]=e2Y+240; 
-              e2Y=floor(random(5,230));
+              e2Y=floor(random(5,160));
             }
           
           
@@ -277,7 +277,7 @@ void draw() {
       }     
       
       //treasure detection
-      if(treasureX>=fighterX-30 && treasureX<=fighterX+30 && treasureY>=fighterY-45 && treasureY<=fighterY+45 ){
+      if(treasureX>=fighterX-50 && treasureX<=fighterX+50 && treasureY>=fighterY-50 && treasureY<=fighterY+50 ){
         treasureX=floor(random(600)); 
         treasureY=floor(random(440));
         m+=19.5;
